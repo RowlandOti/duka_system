@@ -117,6 +117,19 @@
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
       <path value="$PROJECT_DIR$/vendor/brick/math" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/hyn/multi-tenant" />
+      <path value="$PROJECT_DIR$/vendor/tenancy/framework" />
+      <path value="$PROJECT_DIR$/vendor/tenancy/hooks-database" />
+      <path value="$PROJECT_DIR$/vendor/tenancy/affects-connections" />
+      <path value="$PROJECT_DIR$/vendor/tenancy/db-driver-mysql" />
+      <path value="$PROJECT_DIR$/vendor/tenancy/identification-driver-http" />
+      <path value="$PROJECT_DIR$/vendor/tenancy/affects-filesystems" />
+      <path value="$PROJECT_DIR$/vendor/tenancy/affects-logs" />
+      <path value="$PROJECT_DIR$/vendor/tenancy/hooks-migration" />
+      <path value="$PROJECT_DIR$/vendor/tenancy/identification-driver-environment" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />
