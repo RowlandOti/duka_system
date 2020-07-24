@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
+use Tenancy\Tenant\Events\Created;
 
 class RegisterController extends Controller
 {
@@ -56,8 +57,8 @@ class RegisterController extends Controller
             'name' => 'required', 'string', 'max:255',
             'email' => 'required', 'string', 'email', 'max:255',
             'password' => 'required', 'string', 'min:8', 'confirmed',
-            'subdomain' => 'required|unique:system.customers',
-            'domain' => 'required|unique:system.customers',
+            'subdomain' => 'required|unique:landlord.customers',
+            'domain' => 'required|unique:landlord.customers',
         ]);
     }
 
