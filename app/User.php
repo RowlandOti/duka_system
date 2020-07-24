@@ -2,13 +2,19 @@
 
 namespace App;
 
-use Hyn\Tenancy\Traits\UsesTenantConnection;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
 use Tenancy\Affects\Connections\Support\Traits\OnTenant;
 
+/**
+ * User
+ *
+ * @method static Builder where($column, $operator = null, $value = null, $boolean = 'and')
+ * @method static Builder create(array $attributes = [])
+ * @method public Builder update(array $values)
+ */
 class User extends Authenticatable
 {
     use HasApiTokens,Notifiable, OnTenant;

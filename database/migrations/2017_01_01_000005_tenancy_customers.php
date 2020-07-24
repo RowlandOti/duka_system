@@ -24,9 +24,9 @@ class TenancyCustomers extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('uuid')->unique();
+            $table->uuid('uuid')->unique();
             $table->string('subdomain')->unique();
-            $table->string('domain')->unique()->nullable();
+            $table->string('domain')->unique();
             $table->string('redirect_to')->nullable();
             $table->boolean('force_https')->default(false);
             $table->timestamp('under_maintenance_since')->nullable();

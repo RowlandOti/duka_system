@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Tenancy\Identification\Concerns\AllowsTenantIdentification;
@@ -10,10 +11,12 @@ use Tenancy\Identification\Drivers\Http\Contracts\IdentifiesByHttp;
 use Tenancy\Tenant\Events;
 
 /**
+ * Customer
  *
- *
+ * @method static Builder where($column, $operator = null, $value = null, $boolean = 'and')
+ * @method static Builder create(array $attributes = [])
+ * @method public Builder update(array $values)
  */
-
 class Customer extends Model implements Tenant, IdentifiesByHttp
 {
     use AllowsTenantIdentification;
@@ -25,22 +28,27 @@ class Customer extends Model implements Tenant, IdentifiesByHttp
     ];
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'uuid', 'subdomain', 'domain', 'password',
+    ];
+
+    /**
      * Specify whether the tenant model is matching the request. Customer model has an extra
      * column for a id the user is configured to use.
      *
      * @param Request $request
-     * @return Tenant
+     * @return mixed
      */
     public function tenantIdentificationByHttp(Request $request): ?Tenant
     {
-        $customerId  = $request->route('customer');
+        list($subdomain) = explode('.', $request->getHost(), 2);
 
         return $this->query()
-            ->where('id', $customerId)
+            ->where('subdomain', $subdomain)
             ->first();
-    }
-
-    public function route($name, $parameters = [], $absolute = true) {
-        return app('url')->route($name, array_merge([$this->id], $parameters), $absolute);
     }
 }

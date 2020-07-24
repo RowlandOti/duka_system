@@ -45,16 +45,16 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="fqdn" class="col-md-4 col-form-label text-md-right">FQDN</label>
+                                <label for="subdomain" class="col-md-4 col-form-label text-md-right">Subdomain</label>
 
                                 <div class="col-md-6">
-                                    <input id="fqdn" type="fqdn"
-                                           class="form-control{{ $errors->has('fqdn') ? ' is-invalid' : '' }}"
-                                           name="fqdn" value="{{ old('fqdn') }}" required>
+                                    <input id="subdomain" type="text"
+                                           class="form-control{{ $errors->has('subdomain') ? ' is-invalid' : '' }}"
+                                           name="subdomain" value="{{ old('subdomain') }}" required>
 
-                                    @if ($errors->has('fqdn'))
+                                    @if ($errors->has('subdomain'))
                                         <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('fqdn') }}</strong>
+                                            <strong>{{ $errors->first('subdomain') }}</strong>
                                         </span>
                                     @endif
                                 </div>
