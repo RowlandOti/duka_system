@@ -12,11 +12,11 @@
  * @see https://github.com/hyn/multi-tenant
  */
 
-use Hyn\Tenancy\Abstracts\AbstractMigration;
+use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class TenancyCustomers extends AbstractMigration
+class TenancyCustomers extends Migration
 {
     protected $system = true;
 
@@ -25,6 +25,8 @@ class TenancyCustomers extends AbstractMigration
         Schema::create('customers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('uuid')->unique();
+            $table->string('subdomain')->unique();
+            $table->string('domain')->unique()->nullable();
             $table->string('redirect_to')->nullable();
             $table->boolean('force_https')->default(false);
             $table->timestamp('under_maintenance_since')->nullable();

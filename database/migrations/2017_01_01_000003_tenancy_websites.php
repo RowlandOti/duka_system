@@ -12,11 +12,11 @@
  * @see https://github.com/hyn/multi-tenant
  */
 
-use Hyn\Tenancy\Abstracts\AbstractMigration;
+use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class TenancyWebsites extends AbstractMigration
+class TenancyWebsites extends Migration
 {
     protected $system = true;
 
