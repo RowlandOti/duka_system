@@ -8,9 +8,12 @@ use App\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
+use Tenancy\Affects\Connections\Events\Resolving;
+use Tenancy\Identification\Events\Switched;
 use Tenancy\Tenant\Events\Created;
 
 class RegisterController extends Controller
@@ -76,7 +79,9 @@ class RegisterController extends Controller
 
         $this->validator($request->all())->validate();
 
-        $this->createCustomer($request->all());
+        event(new Switched($this->createCustomer($request->all())));
+
+        //Artisan::call('passport:install');
 
         event(new Registered($user = $this->create($request->all())));
 

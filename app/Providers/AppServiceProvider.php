@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Customer;
 use Illuminate\Support\ServiceProvider;
 use Tenancy\Identification\Contracts\ResolvesTenants;
+use Tenancy\Identification\Drivers\Http\Contracts\IdentifiesByHttp;
 
 class AppServiceProvider extends ServiceProvider
 {

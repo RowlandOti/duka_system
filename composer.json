@@ -18,6 +18,7 @@
         "laravel/ui": "^2.0",
         "tenancy/affects-filesystems": "^1.0",
         "tenancy/affects-logs": "^1.0",
+        "tenancy/affects-models": "^1.0",
         "tenancy/db-driver-mysql": "^1.0",
         "tenancy/framework": "^1.0",
         "tenancy/hooks-database": "^1.0",
