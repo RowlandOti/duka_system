@@ -7,6 +7,14 @@ use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
+
+    /*
+     * When a user is successfully authenticated, they will be redirected to the
+     *  /home URI. You can customize the post-authentication redirect path
+     * using the HOME constant defined in your RouteServiceProvider
+     * */
+    public const HOME = '/home';
+
     /**
      * This namespace is applied to your controller routes.
      *
