@@ -7,6 +7,8 @@ use Laravel\Passport\Client;
 use Laravel\Passport\PersonalAccessClient;
 use Laravel\Passport\Token;
 
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 use Tenancy\Affects\Models\Events\ConfigureModels;
 use Tenant\Affects\ConnectionResolver;
 
@@ -18,6 +20,8 @@ class ConfigureTenantModels
         'passportToken' => Token::class,
         'passportAuthCode' => AuthCode::class,
         'passportAccessClient' => PersonalAccessClient::class,
+        'spattieRole' => Role::class,
+        'spattiePermission' => Permission::class,
     ];
 
     public function handle(ConfigureModels $event)
