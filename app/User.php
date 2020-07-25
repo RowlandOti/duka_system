@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
 use Tenancy\Affects\Connections\Support\Traits\OnTenant;
 
 /**
@@ -17,7 +18,7 @@ use Tenancy\Affects\Connections\Support\Traits\OnTenant;
  */
 class User extends Authenticatable
 {
-    use HasApiTokens,Notifiable, OnTenant;
+    use HasApiTokens,Notifiable, OnTenant, HasRoles;
 
     /**
      * The attributes that are mass assignable.

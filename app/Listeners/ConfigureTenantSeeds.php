@@ -10,7 +10,7 @@ class ConfigureTenantSeeds
     public function handle(ConfigureSeeds $event)
     {
         if ($event->event instanceof Created) {
-            //$event->seed(\ProductSeeder::class);
+            $event->seed(\RolesAndPermissionsSeeder::class);
         }
     }
 }

@@ -16,6 +16,7 @@
         "laravel/telescope": "^3.5",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
+        "spatie/laravel-permission": "^3.13",
         "tenancy/affects-filesystems": "^1.0",
         "tenancy/affects-logs": "^1.0",
         "tenancy/affects-models": "^1.0",

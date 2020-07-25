@@ -82,6 +82,7 @@ class RegisterController extends Controller
         Artisan::call('passport:install');
 
         event(new Registered($user = $this->create($request->all())));
+        $user->assignRole('super-admin', 'admin');
 
         return $this->registered($request, $user)
             ?: redirect('http://' . $request->input('domain') . $this->redirectTo);
