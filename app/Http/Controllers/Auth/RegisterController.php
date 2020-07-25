@@ -12,9 +12,7 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
-use Tenancy\Affects\Connections\Events\Resolving;
 use Tenancy\Identification\Events\Switched;
-use Tenancy\Tenant\Events\Created;
 
 class RegisterController extends Controller
 {
