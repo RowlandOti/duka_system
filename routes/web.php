@@ -14,7 +14,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::domain('duka.test')->group(function () {
+Route::domain(env('APP_URL'))->group(function () {
 
     // Landing Page Routes
     Route::get('/', function () {
