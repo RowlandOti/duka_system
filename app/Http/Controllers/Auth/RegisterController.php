@@ -81,7 +81,7 @@ class RegisterController extends Controller
 
         event(new Switched($this->createCustomer($request->all())));
 
-        //Artisan::call('passport:install');
+        Artisan::call('passport:install');
 
         event(new Registered($user = $this->create($request->all())));
 
