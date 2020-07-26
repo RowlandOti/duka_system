@@ -4,8 +4,9 @@ namespace App\Providers;
 
 use App\Customer;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Passport\Passport;
+use Laravel\Telescope\Telescope;
 use Tenancy\Identification\Contracts\ResolvesTenants;
-use Tenancy\Identification\Drivers\Http\Contracts\IdentifiesByHttp;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -16,7 +17,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        \Laravel\Passport\Passport::ignoreMigrations();
+        Passport::ignoreMigrations();
+        Telescope::ignoreMigrations();
 
         $this->app->resolving(ResolvesTenants::class, function (ResolvesTenants $resolver){
             $resolver->addModel(Customer::class);

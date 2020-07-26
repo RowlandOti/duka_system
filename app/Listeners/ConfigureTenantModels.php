@@ -7,6 +7,7 @@ use Laravel\Passport\Client;
 use Laravel\Passport\PersonalAccessClient;
 use Laravel\Passport\Token;
 
+use Laravel\Telescope\Storage\EntryModel;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use Tenancy\Affects\Models\Events\ConfigureModels;
@@ -22,6 +23,7 @@ class ConfigureTenantModels
         'passportAccessClient' => PersonalAccessClient::class,
         'spattieRole' => Role::class,
         'spattiePermission' => Permission::class,
+        'telescopeEntryModel' => EntryModel::class,
     ];
 
     public function handle(ConfigureModels $event)
