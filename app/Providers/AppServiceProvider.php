@@ -18,7 +18,6 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         Passport::ignoreMigrations();
-        //Telescope::ignoreMigrations();
 
         $this->app->resolving(ResolvesTenants::class, function (ResolvesTenants $resolver){
             $resolver->addModel(Customer::class);
