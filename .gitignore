@@ -4,3 +4,4 @@
 /storage/debugbar/
 .env
 *.lock
+/.phpunit.result.cache
