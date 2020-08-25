@@ -9,6 +9,6 @@ class ApplicationController extends Controller
 {
     public function __invoke()
     {
-        return view('application');
+        return view('index');
     }
 }
