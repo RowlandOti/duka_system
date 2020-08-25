@@ -11,7 +11,6 @@
 |
 */
 
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*Route::domain(env('APP_URL'))->group(function () {
@@ -34,7 +33,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index');*/
+Route::post('login', 'Auth\LoginController@login');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+// Route everything else to Vue
 Route::get('/{any}', 'ApplicationController')->where('any', '.*');
+
 
 // Authentication Web Routes
 /*Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
