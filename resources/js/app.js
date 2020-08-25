@@ -4,4 +4,4 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-import './src/main.js'
+import './sxs/main.js'
