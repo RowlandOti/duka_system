@@ -2,5 +2,7 @@
 /vendor/
 /.idea/
 /storage/debugbar/
+/public/js/chunks/
 .env
 *.lock
+/.phpunit.result.cache

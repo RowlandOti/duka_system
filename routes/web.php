@@ -11,10 +11,9 @@
 |
 */
 
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::domain(env('APP_URL'))->group(function () {
+/*Route::domain(env('APP_URL'))->group(function () {
 
     // Landing Page Routes
     Route::get('/', function () {
@@ -33,11 +32,16 @@ Route::domain(env('APP_URL'))->group(function () {
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/', 'HomeController@index');
-//Route::get('/{any}', 'ApplicationController')->where('any', '.*');
+Route::get('/', 'HomeController@index');*/
+Route::post('login', 'Auth\LoginController@login');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+// Route everything else to Vue
+Route::get('/{any}', 'ApplicationController')->where('any', '.*');
+
 
 // Authentication Web Routes
-Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+/*Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
@@ -45,4 +49,4 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset');*/

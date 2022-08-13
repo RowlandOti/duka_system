@@ -12,9 +12,7 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
-use Tenancy\Affects\Connections\Events\Resolving;
 use Tenancy\Identification\Events\Switched;
-use Tenancy\Tenant\Events\Created;
 
 class RegisterController extends Controller
 {
@@ -81,9 +79,10 @@ class RegisterController extends Controller
 
         event(new Switched($this->createCustomer($request->all())));
 
-        //Artisan::call('passport:install');
+        Artisan::call('passport:install');
 
         event(new Registered($user = $this->create($request->all())));
+        $user->assignRole('super-admin', 'admin');
 
         return $this->registered($request, $user)
             ?: redirect('http://' . $request->input('domain') . $this->redirectTo);
